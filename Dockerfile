@@ -3,10 +3,10 @@ FROM ruby:2.4.2-alpine3.6
 ENV PK_RUBY build-base libstdc++
 
 RUN apk --update --no-cache add $PK_RUBY
-
 WORKDIR /app
 
 RUN gem install marc
 
-ADD ./scripts /app/
-RUN chmod +x /app/ybp.rb
+ADD ./scripts/ybp.rb /app/ybp
+RUN chmod +x /app/ybp
+ENV PATH /app:$PATH
