@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'marc'
 require 'ostruct'
 
