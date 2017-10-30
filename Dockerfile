@@ -8,5 +8,6 @@ WORKDIR /app
 RUN gem install marc
 
 ADD ./scripts/ybp.rb /app/ybp
-RUN chmod +x /app/ybp
+ADD ./scripts/casalini.rb /app/casalini
+RUN chmod +x /app/*
 ENV PATH /app:$PATH
