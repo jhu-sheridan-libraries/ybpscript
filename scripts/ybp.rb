@@ -25,7 +25,7 @@ for record in reader
   # Insert 035
   record.append(MARC::DataField.new('035', ' ', ' ')) if record['035'].nil?
   if record['970'] and record['970']['l']
-    record['035'].append MARC::Subfield.new('a', "ypb#{record['970']['l']}")
+    record['035'].append MARC::Subfield.new('a', "ybp#{record['970']['l']}")
   else
     puts "Can't find 970$l: ", record
   end
