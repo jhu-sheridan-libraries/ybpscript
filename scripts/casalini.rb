@@ -58,13 +58,12 @@ Dir.foreach(directory) do |file|
     # reorder the fields
     record.fields.sort! { |a, b| a.tag <=> b.tag }
     records << record
-  end  
+  end
   records.sort! { |a, b| a['245']['a'] <=> b['245']['a'] }
   records.each_slice(MAX_EACH_FILE).with_index { |group, index|
     outfile = "#{file.gsub(/\.mrc/, '')}_#{index+1}.mrc"
     writer = MARC::Writer.new File.join(directory, outfile)
     group.each { |record| writer.write record }
-    puts index
     writer.close
   }
   printf "%-15s %s\n", file, records.size
