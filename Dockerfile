@@ -9,5 +9,7 @@ RUN gem install marc
 
 ADD ./scripts/ybp.rb /app/ybp
 ADD ./scripts/casalini.rb /app/casalini
+ADD ./scripts/harrassowitz.rb /app/harrassowitz
+ADD ./scripts/amalivre.rb /app/amalivre
 RUN chmod +x /app/*
 ENV PATH /app:$PATH
