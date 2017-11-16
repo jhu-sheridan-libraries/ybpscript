@@ -46,7 +46,7 @@ Dir.foreach(directory) do |file|
       record.each_by_tag('910') { |field| field.tag = '971' }
 
       # Copy 980$g to 970$g
-      record.append MARC::DataField.new('970', ' ', ' ', []) unless record['970']
+      record.append MARC::DataField.new('970', ' ', ' ') unless record['970']
       record['970'].append MARC::Subfield.new('g', record['980']['g'])
 
       # Copy 990$i to 970$j
