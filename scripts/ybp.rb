@@ -15,7 +15,8 @@ accounts = {
   '175059': 'UK Approvals',
   '175060': 'UK Firms',
   '175050': 'Ebooks',
-  '175051': 'SAIS Ebooks'
+  '175051': 'SAIS Ebooks',
+  '175052': 'AFL Ebooks'
 }.map {|key, str| [key, OpenStruct.new(name: str, records: [])] }.to_h
 
 total = 0
