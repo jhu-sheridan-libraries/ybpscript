@@ -26,6 +26,14 @@ for record in reader
       record['981'].subfields.each { |sf| sf.value = new_f if sf.code == 'f' }
     end
   end
+
+  if record['980'] and record['980']['g']
+    # Copy 980$g to 981$g
+    record.append MARC::DataField.new('981', ' ', ' ') unless record['981']
+    record['981'].append MARC::Subfield.new('g', record['980']['g'])
+    record['980'].subfields.delete_if { |x| x.code == 'g' }
+  end
+
   records << record
 end
 
