@@ -15,7 +15,7 @@ https://docs.docker.com/engine/installation/
 To install or update the docker containers, use the following command:
 
 ```
-docker pull jiaola/ybpsplit
+docker pull jhulibraries/ybpscript
 ```
 
 ## Instructions
@@ -23,7 +23,7 @@ docker pull jiaola/ybpsplit
 ### ybp
 
 ```
-docker run -v /local/path/to/data:/app/data jiaola/ybpsplit ybp data/<marc_file>
+docker run -v /local/path/to/data:/app/data jhulibraries/ybpscript ybp data/<marc_file>
 ```
 
 Replace `/local/path/to/data` to the directory where the marc file is stored.
@@ -32,13 +32,13 @@ Replace `<marc_file>` to the name of the marc file (including the .mrc extenstio
 ### Casalini
 
 ```
-docker run -v /local/path/to/data:/app/data/casalini jiaola/ybpsplit casalini data/casalini
+docker run -v /local/path/to/data:/app/data/casalini jhulibraries/ybpscript casalini data/casalini
 ```
 
 ### Harrassowitz
 
 ```
-docker run -v /local/path/to/data:/app/data jiaola/ybpsplit harrassowitz data/<marc_file>
+docker run -v /local/path/to/data:/app/data jhulibraries/ybpscript harrassowitz data/<marc_file>
 ```
 Shoul
 Replace `/local/path/to/data` to the directory where the marc file is stored.
@@ -47,8 +47,29 @@ Replace `<marc_file>` to the name of the marc file (including the .mrc extenstio
 ### Amalivre
 
 ```
-docker run -v /local/path/to/data:/app/data jiaola/ybpsplit amalivre data/<marc_file>
+docker run -v /local/path/to/data:/app/data jhulibraries/ybpscript amalivre data/<marc_file>
 ```
 
 Replace `/local/path/to/data` to the directory where the marc file is stored.
 Replace `<marc_file>` to the name of the marc file (including the .mrc extenstion)
+
+## Developers Guide
+
+After clone the github repo, build the docker image: 
+
+```
+cd ybpscript
+docker build -t jhulibraries/ybpscript .
+```
+
+List local docker images, you should see `jhulibraries/ybpscript`
+
+```
+docker images
+```
+
+Push the docker image to docker hub. You may need to login first with `docker login`
+
+```
+docker push jhulibraries/ybpscript:latest
+```
