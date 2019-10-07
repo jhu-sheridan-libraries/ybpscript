@@ -32,12 +32,14 @@ Replace `<marc_file>` to the name of the marc file (including the .mrc extenstio
 
 ```
 docker run -v /local/path/to/data:/app/data/casalini jhulibraries/ybpscript casalini data/casalini
+*windows syntax: docker run -v C:/folder:/app/data/casalini jhulibraries/ybpscript casalini data/casalini
 ```
 
 ### Harrassowitz
 
 ```
 docker run -v /local/path/to/data:/app/data jhulibraries/ybpscript harrassowitz data/<marc_file>
+docker run -v C:/folder:/app/data jhulibraries/ybpscript harrassowitz data/<marc_file>
 ```
 Shoul
 Replace `/local/path/to/data` to the directory where the marc file is stored.
@@ -47,9 +49,10 @@ Replace `<marc_file>` to the name of the marc file (including the .mrc extenstio
 
 ```
 docker run -v /local/path/to/data:/app/data jhulibraries/ybpscript amalivre data/<marc_file>
+docker run -v C:/folder:/app/data jhulibraries/ybpscript amalivre data/<marc_file>
 ```
 
-Replace `/local/path/to/data` to the directory where the marc file is stored.
+Replace `/local/path/to/data` to the directory where the marc file is stored. Please note that Windows syntax varies (see above)
 Replace `<marc_file>` to the name of the marc file (including the .mrc extenstion)
 
 ## Developers Guide
