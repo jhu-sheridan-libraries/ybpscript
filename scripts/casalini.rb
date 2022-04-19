@@ -38,9 +38,9 @@ Dir.foreach(directory) do |file|
   for record in reader
     record.append MARC::DataField.new('505', ' ' , ' ', ['a', 'TITLE ON ORDER'])
     if is_firm? file
-      record['001'].value.gsub!(/^[^\d]*(\d+)/, "it \\1")
+      record['001'].value.gsub!(/^[^\d]*(\d+)/, "its \\1")
     elsif is_approval? file
-      record['001'].value = "it #{record['901']['a'].split('/')[-1]}"
+      record['001'].value = "its #{record['901']['a'].split('/')[-1]}"
 
       # Change 910 to 971
       record.each_by_tag('910') { |field| field.tag = '971' }
