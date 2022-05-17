@@ -36,7 +36,6 @@ Dir.foreach(directory) do |file|
   records = []
   reader = MARC::Reader.new File.join(directory, file), extenal_encoding: "UTF-8"
   for record in reader
-    record.append MARC::DataField.new('505', ' ' , ' ', ['a', 'TITLE ON ORDER'])
     if is_firm? file
       record['001'].value.gsub!(/^[^\d]*(\d+)/, "its \\1")
     elsif is_approval? file
